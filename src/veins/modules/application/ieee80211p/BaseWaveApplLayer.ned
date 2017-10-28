@@ -45,7 +45,7 @@ simple BaseWaveApplLayer like IBaseApplLayer
 
 		double RSUMsgInterval = default(1s) @unit(s); //the interval of RSU update messages interval //anirban code
 		bool sendRSUMsgs = default(true); //whether the RSU should send periodic messages // anirban code
-		int numRSUs = default(10); //the total number of RSUs in the scenario //anirban code
+		int numRSUs = default(64); //the total number of RSUs in the scenario //anirban code
 		int numHotSpots = default(0); //the total number of hotspots among the RSUs //anirban code
 		bool hotspotFlag = default(false); //whether this is a hotspot or not //anirban code
 		

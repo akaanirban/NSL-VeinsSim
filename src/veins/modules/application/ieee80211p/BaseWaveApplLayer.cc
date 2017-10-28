@@ -265,7 +265,7 @@ void BaseWaveApplLayer::handleSelfMsg(cMessage* msg) {
         scheduleAt(simTime() + wsaInterval, sendWSAEvt);
         break;
     }
-    case SEND_RSU_EVT: { //anirban code
+    case SEND_RSU_EVT:   { //anirban code
         WaveShortMessage* wsmRSU = new WaveShortMessage();
         prepareRSUmessage(wsmRSU);
         sendDown(wsmRSU);
