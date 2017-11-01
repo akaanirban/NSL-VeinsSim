@@ -46,7 +46,8 @@ module RSU
         mobility: <mobilityType> like IMobility {
         //mobility: StationaryMobility {
             parameters:
-                @display("p=2040,3000;i=block/cogwheel");
+                //@display("p=2040,3000;i=block/cogwheel");
+                //@display("p=1200,1300;i=veins/sign/yellowdiamond;is=vs");
         }
         
         nic: Nic80211p {

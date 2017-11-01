@@ -2,7 +2,7 @@
 <!-- generated on 2017-09-28 00:00:44.453002 by $Id: randomTrips.py 23999 2017-04-21 09:04:47Z behrisch $
   options: -n smallmap.net.xml -r smallmap.rou.xml -e 50 -l
 -->
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+<routes>
     <trip id="0" depart="0.00" from="-5587241#1" to="5573939"/>
     <trip id="1" depart="1.00" from="43763490#5" to="5570462#1"/>
     <trip id="2" depart="2.00" from="319337750#0" to="5570020"/>

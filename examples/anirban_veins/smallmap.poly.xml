@@ -3,7 +3,7 @@
 <!-- generated on Wed Sep 27 23:59:24 2017 by SUMO polyconvert Version 0.30.0
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/polyconvertConfiguration.xsd">
+<configuration>
 
     <input>
         <net-file value="smallmap.net.xml"/>
@@ -22,7 +22,7 @@
 </configuration>
 -->
 
-<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+<additional >
     <location netOffset="-600696.32,-4721927.09" convBoundary="-0.00,-0.00,1981.00,2252.60" origBoundary="-73.771350,42.643117,-73.747388,42.663457" projParameter="+proj=utm +zone=18 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
 
     <poly id="102586985" type="leisure" color="207,245,201" fill="1" layer="-2.00" shape="1060.31,895.59 1028.33,918.89 1004.83,886.85 1036.81,863.55 1060.31,895.59"/>

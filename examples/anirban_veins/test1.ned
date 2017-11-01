@@ -23,16 +23,19 @@ import org.car2x.veins.nodes.Scenario;
 network test1 extends Scenario
 {	
     parameters:
-        int numRSUs;
-    @display("bgb=395,308");
+        int totalRSUs;
+    @display("bgb=2500,2500");
     submodules:
-        rsu[numRSUs]: RSU {
-            //@display("p=203,284");
+        rsu[totalRSUs]: RSU {
+            //@display("p=1500,1240");
 
 			mobility.x = -1; //-1 for random placement
 			mobility.y = -1;//-1 for random placement
 			mobility.z = -1;//-1 for random placement
-			//mobilityType = "StationaryMobility";
+			
+			//mobility.x = uniform(4000, 4500);
+			//mobility.y = uniform(20, 100);
+			//mobility.z = 0;
 			
 			mobility.initFromDisplayString = false;
 			mobility.initialX = uniform(500, 4500);

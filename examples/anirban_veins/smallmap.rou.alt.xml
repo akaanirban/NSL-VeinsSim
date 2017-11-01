@@ -3,7 +3,7 @@
 <!-- generated on Thu Sep 28 00:00:46 2017 by SUMO duarouter Version 0.30.0
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+<configuration>
 
     <input>
         <net-file value="smallmap.net.xml"/>
@@ -31,7 +31,7 @@
 </configuration>
 -->
 
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+<routes>
     <vehicle id="0" depart="0.00">
         <routeDistribution last="0">
             <route cost="79.19" probability="1.00000000" edges="-5587241#1 5569091 5585560#0 5585560#1 5585560#2 5585560#3 5585560#4 5585560#5 5585560#6 37389432#0 37389432#1 37389432#2 -5587868#4 -5587868#3 -5587868#2 -5587868#1 -5587868#0 36747108#2 5573939"/>

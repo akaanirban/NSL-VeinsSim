@@ -464,7 +464,7 @@ simtime_t Decider80211p::processSignalEnd(AirFrame* msg) {
 		}
 	}
 
-	if (result->isSignalCorrect() || frame->getUnderSensitivity()) {
+	if (result->isSignalCorrect()/* || frame->getUnderSensitivity()*/) { //anirban code, uncomment to make everybody receive all messages
 		DBG_D11P << "packet was received correctly, it is now handed to upper layer...\n";
 		// go on with processing this AirFrame, send it to the Mac-Layer
 		phy->sendUp(frame, result);

@@ -37,6 +37,7 @@ void TraCIDemo11p::initialize(int stage) {
     BaseWaveApplLayer::initialize(stage);
     if (stage == 0) {
         cout << "Vehicle: "<< mobility->getExternalId() << " initiated"<<endl;
+        cout<<"Position : "<<mobility->getCurrentPosition()<<endl;
         sentMessage = false;
         lastDroveAt = simTime();
         currentSubscribedServiceId = -1;
@@ -45,18 +46,23 @@ void TraCIDemo11p::initialize(int stage) {
         dummyTag+=":000";
         populateWSM(aggregatedMessage, 0, 0, dummyTag.c_str());  //create variable to customize message?
         aggregatedMessage->setPsid(-10);
+
+        //mobility = TraCIMobilityAccess().get(mobility);
+        WaveShortMessage* wsm = new WaveShortMessage();  //Updated sim code
+        populateWSM(wsm, 0, 0, dummyTag.c_str());  //create variable to customize message?
+        wsm->setPsid(-10);
+        scheduleAt(simTime() + 1, wsm);  //create variable to customize delay?
+        /*//mobility = TraCIMobilityAccess().get(mobility);
+        WaveShortMessage* wsm = new WaveShortMessage();  //Updated sim code
+        //populateWSM(wsm, 0, 0, "Go Bobcats!");  //create variable to customize message?
+
+        string dummyTag(numRSUs, '0');
+        dummyTag+=":000";
+        populateWSM(wsm, 0, 0, dummyTag.c_str());  //create variable to customize message?
+        wsm->setPsid(-10);
+        //scheduleAt(simTime() + 1 + uniform(0.01,0.2), wsm);  //create variable to customize delay?
+        scheduleAt(simTime() + 1, wsm);  //create variable to customize delay?*/
     }
-    //mobility = TraCIMobilityAccess().get(mobility);
-    WaveShortMessage* wsm = new WaveShortMessage();  //Updated sim code
-    //populateWSM(wsm, 0, 0, "Go Bobcats!");  //create variable to customize message?
-
-    string dummyTag(numRSUs, '0');
-    dummyTag+=":000";
-    populateWSM(wsm, 0, 0, dummyTag.c_str());  //create variable to customize message?
-    wsm->setPsid(-10);
-    //scheduleAt(simTime() + 1 + uniform(0.01,0.2), wsm);  //create variable to customize delay?
-    scheduleAt(simTime() + 1, wsm);  //create variable to customize delay?
-
 }
 
 void TraCIDemo11p::onWSA(WaveServiceAdvertisment* wsa) {
@@ -86,7 +92,7 @@ void TraCIDemo11p::onWSM(WaveShortMessage* wsm) {
 void TraCIDemo11p::onCWSM(WaveShortMessage* wsm) {  //Updated sim code, custom method to handle receiving a "custom wave short message".  This only prints out the message when received at this time
     MessageList.push_back(wsm->getWsmData());
     aggregateMessage(wsm);
-    //cout<<"Aggregated ----->"<<aggregatedMessage->getWsmData()<<endl;
+    cout<<"Aggregated ----->"<<aggregatedMessage->getWsmData()<<endl;
 
     if (!sentMessage) {
             sentMessage = true;
@@ -126,7 +132,7 @@ void TraCIDemo11p::handlePositionUpdate(cObject* obj) {
     BaseWaveApplLayer::handlePositionUpdate(obj);
     //sends message every 1 seconds
         if (simTime() - lastDroveAt >= 1) {
-            sendDown(aggregatedMessage);
+            sendDown(aggregatedMessage->dup());
             lastDroveAt = simTime();
         }
     // stopped for for at least 1s?
@@ -175,7 +181,6 @@ void TraCIDemo11p::aggregateMessage(WaveShortMessage* newmsg){
     int Li = i;
     int j;
     while (i<Li+n){
-
         if(i==n){
             j = n;
         }

@@ -371,16 +371,15 @@ void BaseWaveApplLayer::prepareRSUmessage(WaveShortMessage* wsm){  //anirban cod
         }
     //generate random content
     int randomContent = (rand() % 1000) + 1;
-    msgTagStr+= ":"+ std::to_string(randomContent);
     if(hotspotFlag){
         //create variable to customize message?
+        msgTagStr+= ":"+ std::to_string(randomContent);
         populateWSM(wsm, 0, 0, msgTagStr.c_str());
     }
     else{
         //if not hotspot generate blank message
-        string dummyTag(numRSUs, '0');
-        dummyTag+=":000";
-        populateWSM(wsm, 0, 0, dummyTag.c_str());
+        msgTagStr+=":000";
+        populateWSM(wsm, 0, 0, msgTagStr.c_str());
     }
     wsm->setPsid(-10);
 }
