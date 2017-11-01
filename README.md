@@ -3,6 +3,8 @@
 ### To run :
 Firstly copy `/examples/anirban_veins` inside `/veins-veins-4.6/examples` folder. This is a new run scenario. The network file is (stupidly) named `test1.ned` and it has config to generate multiple RSUs. Rest of the files are pretty self explanatory. 
 
+Then copy the `src/veins/modules/application` folder and replace the generic folder in the veins installation with the same name.
+
 ### Folder Structure:
 ```
 .
