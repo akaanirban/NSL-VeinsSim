@@ -24,7 +24,7 @@ network test1 extends Scenario
 {	
     parameters:
         int totalRSUs;
-    @display("bgb=2500,2500");
+    	@display("bgb=2500,2500");
     submodules:
         rsu[totalRSUs]: RSU {
             //@display("p=1500,1240");
